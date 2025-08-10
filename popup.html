@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefly</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Briefly</h1>
+
+    <section class="section">
+      <label for="provider">大模型</label>
+      <select id="provider">
+        <option value="deepseek">DeepSeek</option>
+        <option value="qwen">Qwen</option>
+      </select>
+      <div class="note" id="configHint" style="display:none;">
+        尚未配置 API Key，请前往设置页完成配置。
+        <button id="openOptions" class="linklike">打开设置</button>
+      </div>
+    </section>
+
+    <section class="section actions">
+      <button id="btnSummarize">一键总结当前页</button>
+      <button id="btnOpenHistory" class="ghost">查看历史</button>
+      <span id="status"></span>
+    </section>
+
+    <section class="section" id="progressWrap" style="display:none;">
+      <div class="progress-bar">
+        <div class="progress-inner" id="progressInner" style="width:0%"></div>
+      </div>
+      <div class="progress-text" id="progressText">0%</div>
+    </section>
+
+    <section class="section">
+      <label for="userHint">自定义提示词（可选）</label>
+      <textarea id="userHint" rows="3" placeholder="例如：更强调可执行建议；限制在200字内；增加风险分析…"></textarea>
+      <div class="subactions">
+        <button id="btnRegenerate" class="secondary">基于提示词重新总结</button>
+      </div>
+    </section>
+
+    <section class="section result">
+      <div class="result-toolbar">
+        <span>总结结果</span>
+        <div class="spacer"></div>
+        <button id="btnCopy" class="ghost">复制</button>
+      </div>
+      <div id="result" class="md"></div>
+    </section>
+
+    <section class="section links">
+      <button id="openOptions2" class="linklike">打开设置</button>
+      <a id="docs-link" href="https://github.com/" target="_blank" rel="noreferrer">项目主页</a>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

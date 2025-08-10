@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefly 设置</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Briefly 设置</h1>
+    <p>在此页面完成模型与 API Key 的首次配置，弹窗中仅负责选择提供方与发起总结。</p>
+
+    <section class="section">
+      <label for="provider">默认大模型</label>
+      <select id="provider">
+        <option value="deepseek">DeepSeek</option>
+        <option value="qwen">Qwen</option>
+      </select>
+    </section>
+
+    <section class="section">
+      <h2>DeepSeek</h2>
+      <label for="deepseekKey">API Key</label>
+      <input id="deepseekKey" type="password" placeholder="输入 DeepSeek API Key" />
+      <label for="deepseekModel">默认模型</label>
+      <input id="deepseekModel" type="text" placeholder="deepseek-chat" />
+    </section>
+
+    <section class="section">
+      <h2>Qwen (DashScope)</h2>
+      <label for="qwenKey">API Key</label>
+      <input id="qwenKey" type="password" placeholder="输入 DashScope API Key" />
+      <label for="qwenModel">默认模型</label>
+      <input id="qwenModel" type="text" placeholder="qwen2.5-7b-instruct" />
+    </section>
+
+    <section class="section actions">
+      <button id="btnSave">保存</button>
+      <span id="status"></span>
+    </section>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
